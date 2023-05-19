@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import Character from "./Character";
+import "../css/CharacterList.css";
 
-function NavPage(props) {
+function NavMenu({ page, setPage }) {
   return (
-    <nav>
-      <button onClick={() => props.setPage(props.page - 1)}>Prev</button>
-      <h3>Page: {props.page}</h3>
-      <button onClick={() => props.setPage(props.page + 1)}>Next</button>
+    <nav className="nav-bar">
+      <button onClick={() => setPage(page - 1)}>Prev</button>
+      <h2>Page: {page}</h2>
+      <button onClick={() => setPage(page + 1)}>Next</button>
     </nav>
   );
 }
@@ -29,13 +30,13 @@ function CharacterList() {
   }, [page]);
 
   return (
-    <div className="container">
-      <NavPage page={page} setPage={setPage} />
+    <div>
+      <NavMenu page={page} setPage={setPage} />
 
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div className="row">
+        <div className="container">
           {characters.map((character) => {
             return (
               <div className="character" key={character.id}>
@@ -45,7 +46,7 @@ function CharacterList() {
           })}
         </div>
       )}
-      <NavPage page={page} setPage={setPage} />
+      <NavMenu page={page} setPage={setPage} />
     </div>
   );
 }

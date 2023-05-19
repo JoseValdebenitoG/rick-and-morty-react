@@ -1,0 +1,15 @@
+.card {
+  background-color: #1a1a1a;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin: 1em auto;
+  padding: 5px 1.2em;
+  transition: border-color 0.25s;
+}
+
+.card:hover {
+  border-color: #79ff64c1;
+}
+.name {
+  font-family: 'Darumadrop One', cursive;
+}
