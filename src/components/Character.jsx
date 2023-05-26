@@ -5,9 +5,9 @@ function Character({ character }) {
   return (
     <div className="card">
       <h2 className="name">{character.name}</h2>
-      <img src={character.image} alt={character.name} />
-      <p>{character.origin.name}</p>
-      <p>{character.species}</p>
+      <img className="image" src={character.image} alt={character.name} />
+      <p className="origin-name">{character.origin.name}</p>
+      <p className="species-name">{character.species}</p>
     </div>
   );
 }

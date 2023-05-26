@@ -5,7 +5,9 @@ import "../css/CharacterList.css";
 function NavMenu({ page, setPage }) {
   return (
     <nav className="nav-bar">
-      <button onClick={() => setPage(page - 1)}>Prev</button>
+      <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+        Prev
+      </button>
       <h2>Page: {page}</h2>
       <button onClick={() => setPage(page + 1)}>Next</button>
     </nav>
