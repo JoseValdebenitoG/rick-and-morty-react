@@ -5,6 +5,12 @@
   font-family: 'Darumadrop One', cursive;
   justify-content: space-between;
 }
+.nav-bar_buttons {
+  padding: 5px;
+}
+.nav-bar_buttons button {
+  margin-left: 1em;
+}
 .container {
   display: flex;
   flex-direction: column; 
@@ -12,6 +18,28 @@
   width: 100%;
 }
 
+.card {
+  background-color: #242424;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor:pointer;
+  margin: 1em auto;
+  padding: 1.2em 1.2em;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+.card-inner {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.4s;
+}
+
+.card:hover .card-inner {
+  border-color: #79ff64c1;
+  transform: scale(1.03);
+}
 
 
 /* Desktop */

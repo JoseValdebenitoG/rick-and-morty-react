@@ -1,23 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Character from "./Character";
-import "../css/CharacterList.css";
 
-function NavMenu({ page, setPage }) {
-  return (
-    <nav className="nav-bar">
-      <h2>Page: {page}</h2>
-      <div className="nav-bar_buttons">
-        <button onClick={() => setPage(page - 1)} disabled={page === 1}>
-        Prev
-        </button>
-        <button onClick={() => setPage(page + 1)}>Next</button>
-      </div>
-    </nav>
-  );
-}
-
-function CharacterList() {
+export default function EpisodeList() {
   const [characters, setCharcters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -30,6 +13,7 @@ function CharacterList() {
       const data = await response.json();
       setLoading(false);
       setCharcters(data.results);
+      console.log(data.results)
     }
     fetchData();
   }, [page]);
@@ -37,24 +21,23 @@ function CharacterList() {
 
   return (
     <div>
-      <NavMenu page={page} setPage={setPage} />
 
       {loading ? (
         <h1>Loading...</h1>
       ) : (
         <div className="container animate__animated animate__fadeInUp">
+          <h2>Episodios</h2>
           {characters.map((character) => {
             return (
-              <Link to="episodes" className="card" key={character.id}>
-                <Character character={character} /> 
-              </Link>
+              <div className="character" key={character.id}>
+                <ul>
+                  <li>{character.episode}</li>
+                </ul>
+              </div>
             );
           })}
         </div>
       )}
-      <NavMenu page={page} setPage={setPage} />
     </div>
   );
 }
-
-export default CharacterList;

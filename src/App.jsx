@@ -1,7 +1,10 @@
+import { Routes, Route} from "react-router-dom";
 import "../src/css/app.css";
 import CharacterList from "./components/CharacterList";
+import EpisodeList from "./components/EpisodeList";
 
 function App() {
+
   return (
     <main className="container">
       <a href="/" className="portal-wrapper">
@@ -9,7 +12,10 @@ function App() {
         <img src="/portal.png" className="logo" alt="portal" />
       </a>
       <h1 className="title">Rick and Morty</h1>
-      <CharacterList />
+      <Routes>
+        <Route path="/" element={<CharacterList/>} />
+        <Route path="/episodes" element={<EpisodeList/>}/>
+      </Routes>
     </main>
   );
 }
