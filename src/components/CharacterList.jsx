@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Character from "./Character";
-import NavMenu from "./NavMenu";
 import "../css/CharacterList.css";
+import NavMenuCharacters from "./NavMenuCharacters";
 
 function CharacterList() {
   const [characters, setCharacters] = useState([]);
@@ -22,7 +22,7 @@ function CharacterList() {
 
   return (
     <div>
-      <NavMenu page={page} setPage={setPage} />
+      <NavMenuCharacters page={page} setPage={setPage} />
 
       {loading ? (
         <h1>Loading...</h1>
@@ -30,14 +30,14 @@ function CharacterList() {
         <div className="container animate__animated animate__fadeInUp">
           {characters.map((character) => {
             return (
-              <Link to="episodes" className="card" key={character.id}>
+              <Link className="card" key={character.id}>
                 <Character character={character} />
               </Link>
             );
           })}
         </div>
       )}
-      <NavMenu page={page} setPage={setPage} />
+      <NavMenuCharacters page={page} setPage={setPage} />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-export default function NavMenu({ page, setPage }) {
+export default function NavMenuCharacters({ page, setPage }) {
   return (
     <nav className="nav-bar">
       <h2>Page: {page}</h2>
@@ -6,9 +6,7 @@ export default function NavMenu({ page, setPage }) {
         <button onClick={() => setPage(page - 1)} disabled={page === 1}>
           Prev
         </button>
-        <button onClick={() => setPage(page + 1)} disabled={page >= 3}>
-          Next
-        </button>
+        <button onClick={() => setPage(page + 1)}>Next</button>
       </div>
     </nav>
   );

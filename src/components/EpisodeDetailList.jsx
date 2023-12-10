@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
-import Episode from "./Episodes";
-import NavMenuEpisodes from "./NavMenuEpisodes";
-import { Link } from "react-router-dom";
 
-export default function EpisodesList() {
+export default function EpisodeDetailList() {
   const [episodes, setEpisodes] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
+  const [id, setId] = useState(1);
 
   useEffect(() => {
     async function fetchData() {
-      const api = `${import.meta.env.VITE_API_EPI_URL}=${page}`;
+      const api = `${import.meta.env.VITE_API_EPI_DETAIL}/${id}`;
       const response = await fetch(api);
       const data = await response.json();
       setLoading(false);
@@ -18,12 +15,10 @@ export default function EpisodesList() {
       console.log(data.results);
     }
     fetchData();
-  }, [page]);
+  }, [id]);
 
   return (
     <div>
-      <NavMenuEpisodes page={page} setPage={setPage} />
-
       {loading ? (
         <h1>Loading...</h1>
       ) : (
@@ -31,15 +26,13 @@ export default function EpisodesList() {
           <h1>Episodios</h1>
           {episodes.map((episode) => {
             return (
-              <Link to="episode" className="card" key={episode.id}>
-                <Episode episode={episode} />
-              </Link>
+              <div className="card" key={episode.id}>
+                <EpisodeDetail episode={episode} />
+              </div>
             );
           })}
         </div>
       )}
-
-      <NavMenuEpisodes page={page} setPage={setPage} />
     </div>
   );
 }

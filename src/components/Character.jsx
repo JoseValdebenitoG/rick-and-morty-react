@@ -5,12 +5,8 @@ export default function Character({ character }) {
   return (
     <div className="character">
       <img className="image" src={character.image} alt={character.name} />
-      <h2 className="name">{character.name}</h2>
-      <p className="origin-name">{character.origin.name}</p>
-      <p className="species-name">{character.species}</p>
+      <h2 className="card-title">Name: {character.name}</h2>
+      <p className="card-subtitle">Species: {character.species}</p>
     </div>
   );
 }
-
-
-

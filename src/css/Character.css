@@ -1,7 +1,3 @@
-.name {
-  font-family: 'Darumadrop One', cursive;
-  margin-top: 3px;
-}
 .image {
   border-radius: 50%;
   transition: all 0.3s;
@@ -10,12 +6,3 @@
 /* .image:hover {
   transform: scale(1.03);
 } */
-.origin-name {
-  font-family: 'Ubuntu', sans-serif;
-  font-style: italic;
-}
-.species-name {
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 1.1em;
-  font-weight: 400;
-}
