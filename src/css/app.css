@@ -27,8 +27,8 @@
 .portal-text {
   font-family: 'Darumadrop One', cursive;
   font-size: 1.3em;
-  margin: 0;
-  position: fixed;
+  margin: 0 auto;
+  position: -webkit-sticky;
 }
 
 .logo {

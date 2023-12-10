@@ -1,10 +1,9 @@
-import { Routes, Route} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "../src/css/app.css";
 import CharacterList from "./components/CharacterList";
-import EpisodeList from "./components/EpisodeList";
+import EpisodeList from "./components/EpisodesList";
 
 function App() {
-
   return (
     <main className="container">
       <a href="/" className="portal-wrapper">
@@ -13,8 +12,8 @@ function App() {
       </a>
       <h1 className="title">Rick and Morty</h1>
       <Routes>
-        <Route path="/" element={<CharacterList/>} />
-        <Route path="/episodes" element={<EpisodeList/>}/>
+        <Route path="/" element={<CharacterList />} />
+        <Route path="/episodes" element={<EpisodeList />} />
       </Routes>
     </main>
   );
