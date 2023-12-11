@@ -15,7 +15,6 @@ export default function EpisodesList() {
       const data = await response.json();
       setLoading(false);
       setEpisodes(data.results);
-      console.log(data.results);
     }
     fetchData();
   }, [page]);
@@ -27,8 +26,9 @@ export default function EpisodesList() {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div className="container animate__animated animate__fadeInUp">
+        <div className="animate__animated animate__fadeInUp">
           <h1>Episodios</h1>
+          <section className="container">
           {episodes.map((episode) => {
             return (
               <Link to="episode" className="card" key={episode.id}>
@@ -36,6 +36,7 @@ export default function EpisodesList() {
               </Link>
             );
           })}
+          </section>
         </div>
       )}
 

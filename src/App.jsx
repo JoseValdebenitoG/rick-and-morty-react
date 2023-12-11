@@ -2,8 +2,6 @@ import { Routes, Route, Link } from "react-router-dom";
 import "../src/css/app.css";
 import CharacterList from "./components/CharacterList";
 import EpisodesList from "./components/EpisodesList";
-import EpisodeDetail from "./components/EpisodeDetail";
-import EpisodeDetailList from "./components/EpisodeDetailList";
 
 function App() {
   return (
@@ -14,17 +12,16 @@ function App() {
       </a>
       <h1 className="title">Rick and Morty</h1>
       <section className="navPages">
-        <Link to="episodes" className="navPagesButtons">
-          Episodes
+        <Link to="/" className="navPagesButtons">
+          Personajes
         </Link>
         <Link to="episodes" className="navPagesButtons">
-          Locations
+          Episodes
         </Link>
       </section>
       <Routes>
         <Route path="/" element={<CharacterList />} />
         <Route path="/episodes" element={<EpisodesList />} />
-        <Route path="/episodes/episode" element={<EpisodeDetailList />} />
       </Routes>
     </main>
   );

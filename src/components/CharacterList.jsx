@@ -27,7 +27,9 @@ function CharacterList() {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div className="container animate__animated animate__fadeInUp">
+        <div className="animate__animated animate__fadeInUp">
+          <h1>Personajes</h1>
+          <section className="container">
           {characters.map((character) => {
             return (
               <Link className="card" key={character.id}>
@@ -35,6 +37,7 @@ function CharacterList() {
               </Link>
             );
           })}
+          </section>
         </div>
       )}
       <NavMenuCharacters page={page} setPage={setPage} />
